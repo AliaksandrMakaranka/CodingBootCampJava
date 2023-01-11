@@ -13,7 +13,7 @@ Testing test Paragraph
 
 Some text
 
-[Link to my linkedin page](https://www.linkedin.com/in/aliaksandr-makaranka-3811b7216/)
+[Link to my linkedin page](https://www.linkedin.com/in/aliaksandr-makaranka)
 
 <aliaksandrmakaranka@gmail.com>
 
