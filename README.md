@@ -13,4 +13,4 @@ Testing test Paragraph
 
 Some text
 
-First step to lern markdown
+First steps to lern markdown
