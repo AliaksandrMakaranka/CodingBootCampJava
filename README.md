@@ -12,9 +12,4 @@ Testing test Paragraph
 ### Paragraph 2
 
 Some text
-
-[Link to my linkedin page](https://www.linkedin.com/in/aliaksandr-makaranka)
-
-<aliaksandrmakaranka@gmail.com>
-
-@Discord 8BitCore#9100
+First step to lern markdown
