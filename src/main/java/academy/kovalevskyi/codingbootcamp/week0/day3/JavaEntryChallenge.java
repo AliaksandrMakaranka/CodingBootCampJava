@@ -45,7 +45,6 @@ public class JavaEntryChallenge {
   } 
     
   public static int smallestElementOfArray(int[] arr) {
-    //TODO next solution with stream!
     int minElement = arr[0];
 
     for (int number : arr) {
