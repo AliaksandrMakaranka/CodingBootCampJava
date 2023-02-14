@@ -11,6 +11,6 @@ Testing test Paragraph
 
 ### Paragraph 2
 
-Some text
+all code was written in vim as part of the course  Java Coding Bootcamp
 
-First steps to lern markdown
+https://kovalevskyi.academy/
