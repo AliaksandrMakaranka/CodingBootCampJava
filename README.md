@@ -1,5 +1,8 @@
 # Titles
-Description
+
+all code was written in vim as part of the course  Java Coding Bootcamp
+
+https://kovalevskyi.academy/
 
 ## Content
 - [Par 1](#paragraph-1)
@@ -11,6 +14,4 @@ Testing test Paragraph
 
 ### Paragraph 2
 
-all code was written in vim as part of the course  Java Coding Bootcamp
 
-https://kovalevskyi.academy/
