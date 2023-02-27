@@ -18,8 +18,10 @@ public class PointWithLabel<T> extends PointWithValue<String> {
   public int compareTo(Point point) {
     if (point instanceof PointWithLabel) {
       PointWithLabel z = (PointWithLabel) point;
+
       return this.getLabel().compareTo(z.getLabel());
     }
+
     return super.compareTo(point); 
   }
 }

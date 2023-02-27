@@ -1,5 +1,7 @@
 package academy.kovalevskyi.codingbootcamp.week0.day4;
 
+import java.util.Arrays;
+
 public class Numbers1 {
 
   public static int[] generateNumbers() {
@@ -19,8 +21,13 @@ public class Numbers1 {
   }
 
   public static int findBiggest(int[] numbers) {
+    //Stream
+    return Arrays.stream(numbers).max().getAsInt();
+    //solution with use index
+    /*
     int biggest = findIndexOfBiggestNumber(numbers);
     return numbers[biggest];
+    */
   }
   
   public static boolean isNegative(int number) {
@@ -28,9 +35,7 @@ public class Numbers1 {
   }
   
   public static int findIndexOfBiggestNumber(final int[] numbers) {
-    //TODO with stream!
     int indexArr = 0;
-
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[indexArr] < numbers[i]) {
         indexArr = i;
@@ -54,6 +59,10 @@ public class Numbers1 {
   } 
  
   public static char[] convertToCharArray(final int number) {
+    //simple solution
+    //return String.valueOf(number).toCharArray();
+
+    //general solution 
     int len = len(number);
     int tmpNumber = number;
 
@@ -64,11 +73,15 @@ public class Numbers1 {
     } 
 
     for (int i = len - 1; i >= 0; i--) {
+
       int tmp = tmpNumber % 10;
+
       if (number < 0) {
         tmp = -tmp;
       }
+
       tmpNumber  /= 10;
+
       result[i] = (char) (tmp + '0');
     }
   

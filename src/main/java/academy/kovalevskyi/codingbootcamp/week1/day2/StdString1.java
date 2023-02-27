@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 
 public class StdString1 implements Iterable<Character> {
-  char[] base;
+  protected char[] base;
 
   public StdString1(char[] base) {
     this.base = base.clone();
@@ -27,6 +27,7 @@ public class StdString1 implements Iterable<Character> {
   }
 
   public StdString1 append(StdString1 that) {
+
     if (that == null) {
       throw new NullPointerException(); 
     }
@@ -49,25 +50,30 @@ public class StdString1 implements Iterable<Character> {
   }
 
   public char charAt(final int index) {
+
     for (char ch : base) {
       if (ch == base[index]) {
         return ch;
       } 
     }
+
     return (char) 0;
   }
 
   public int indexOf(final char target) {
+
     for (int index = 0; index < this.base.length; index++) {
       if (target == this.base[index]) {
         return index;
       } 
     }
+
     return - 1;
   }
   
   @Override
   public boolean equals(final Object otherObj) {
+
     if (otherObj == this) {
       return true;
     }
@@ -80,16 +86,19 @@ public class StdString1 implements Iterable<Character> {
     if (Arrays.equals(st.base, this.base)) {
       return true;
     }
+
     return false;
   }
   
   @Override
   public int hashCode() {
+
     int result = 0;
 
     for (int i = 0; i < base.length; i++) {
       result += base[i];
     }
+
     return result;
   }
   
@@ -103,7 +112,8 @@ public class StdString1 implements Iterable<Character> {
     return new NewIterator();
   }
 
-  public class NewIterator implements Iterator<Character> {
+  private class NewIterator implements Iterator<Character> {
+
     int position;
 
     @Override
@@ -113,9 +123,11 @@ public class StdString1 implements Iterable<Character> {
     
     @Override
     public Character next() {
+
       if (hasNext() == false) {
         throw new NoSuchElementException();
       }
+
       return base[position++];
     }
   }

@@ -2,7 +2,7 @@ package academy.kovalevskyi.codingbootcamp.week2.day1.models;
 
 public record Box(int width, int height, String wall, String corner, String message) {
 
-  public static class Builder {
+  public class Builder {
     
     private int width;
     private int height;
@@ -38,5 +38,7 @@ public record Box(int width, int height, String wall, String corner, String mess
     public String toString() {
       return String.format("Box[width=%d, height=%d, wall=%s, corner=%s, message=%s]");
     }
+
   }
+
 }

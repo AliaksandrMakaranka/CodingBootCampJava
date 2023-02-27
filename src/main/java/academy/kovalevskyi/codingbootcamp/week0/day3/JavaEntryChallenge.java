@@ -1,5 +1,7 @@
 package academy.kovalevskyi.codingbootcamp.week0.day3;
 
+import java.util.Arrays;
+
 public class JavaEntryChallenge {
   
   private static final int SECONDS = 60;  
@@ -45,6 +47,11 @@ public class JavaEntryChallenge {
   } 
     
   public static int smallestElementOfArray(int[] arr) {
+    //stream solution
+    return Arrays.stream(arr).min().getAsInt();
+    
+    //simple solution
+    /*
     int minElement = arr[0];
 
     for (int number : arr) {
@@ -53,6 +60,7 @@ public class JavaEntryChallenge {
       }  
     }
     return minElement;
+    */
   }
   
   public static void checkResultOfWork(boolean quick, boolean efficient, boolean reliable) {

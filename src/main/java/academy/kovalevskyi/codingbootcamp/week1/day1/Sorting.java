@@ -4,6 +4,12 @@ import java.util.Comparator;
 
 public class Sorting {
   
+  public static <T> void swap(T[] target, int i, int j) {
+    T swap = target[i];
+    target[i] = target[j];
+    target[j] = swap;
+  }  
+  
   public static <T> void sort(T[] target, Comparator<T> comparator) {
     if (target == null) {
       throw new NullPointerException();
@@ -11,11 +17,11 @@ public class Sorting {
     
     for (int i = 0; i < target.length - 1; i++) {
       for (int j = 0; j < target.length - i - 1; j++) {
+
         if (comparator.compare(target[j], target[j + 1]) > 0) {
-          T temp = target[j];
-          target[j] = target[j + 1];
-          target[j + 1] = temp;
+          swap(target, j, j + 1);
         }
+
       }
     }
   }

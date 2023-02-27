@@ -39,6 +39,7 @@ public class Point implements Comparable<Point> {
     int a = this.getX() - that.getX();
     int b = this.getY() - that.getY();
     int result = (a * a) + (b * b);
+
     return result;
   }
   
@@ -47,9 +48,11 @@ public class Point implements Comparable<Point> {
     if (this == o) {
       return true;
     }
+
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+
     Point point = (Point) o;
     
     if (getX() == point.getX() && getY() == point.getY()) {

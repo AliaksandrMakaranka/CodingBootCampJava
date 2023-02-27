@@ -5,6 +5,7 @@ import academy.kovalevskyi.codingbootcamp.week1.day2.StdString1;
 public class StringUtils {
 
   public static int strToInt(String str) {
+
     int i = 0;
     int num = 0;
     boolean isNeg = false;
@@ -49,6 +50,7 @@ public class StringUtils {
         return true;
       }
     }
+
     return false;
   }
   
@@ -60,6 +62,7 @@ public class StringUtils {
         return true;
       }
     }  
+
     return false;
   }
   
@@ -88,79 +91,92 @@ public class StringUtils {
   
 
   public static StringBuilder makeUppercase(char[] input) {
+
     StringBuilder sb = new StringBuilder();
 
     for (int i = 0; i < input.length; i++) {
       sb.append(toAsciiUppercase(input[i]));
     }  
+
     return sb;
   }
   
   public static StringBuilder makeLowercase(char[] input) {
+
     StringBuilder sb = new StringBuilder();
   
     for (int i = 0; i < input.length; i++) {
       sb.append(toAsciiLowercase(input[i]));
     }
+
     return sb;
   }
 
   public static StringBuilder makeCamel(char[] input) {
+
     StringBuilder sb = new StringBuilder();
-    
+       
     for (int i = 0; i < input.length; i++) {
+
       if (i % 2 == 0) {
         sb.append(toAsciiLowercase(input[i]));
-      }
-      
-      if (i % 2 != 0) {
+      } else {
         sb.append(toAsciiUppercase(input[i]));
-      } 
+      }
     }   
 
     return sb;
   }
   
   public static boolean isStringAlphaNumerical(char[] input) {
+
     for (int i = 0; i < input.length; i++) {
+
       if (input[i] > 256) {
         throw new IllegalArgumentException();
       }
+
       if (!isAsciiAlphabetic(input[i]) && !isAsciiNumeric(input[i]) && !isSpace(input[i])) {
         return false;
       }
     }
+
     return true;
   }  
 
   public static char[] concatStrings(char[][] input) {
+    //flat map stream -> to array from under array 
     if (input == null) {
       throw new NullPointerException();
     }
     
-    
-    int arrLength = 0;
+    int newArrayLength = 0;
+
     for (int i = 0; i < input.length; i++) {
-      arrLength += input[i].length;
+      newArrayLength += input[i].length;
     }
     
-    char[]result = new char[arrLength]; 
+    char[]result = new char[newArrayLength]; 
     int k = 0;
+
     for (int i = 0; i < input.length; i++) {
       for (int j = 0; j < input[i].length; j++) {
         asciiVerify(input[i][j]);
-        result[k] = input[i][j];
-        k++;   
+        result[k++] = input[i][j];
       }
-    } 
+    }
+ 
     return result;
   }
   
   public static int toInt(char[] input) {
+
     if (input.length < 1) {
       throw new IllegalArgumentException();
-    }  
+    }
+  
     String result = "";
+
     for (int i = 0; i < input.length; i++) {
       result += input[i];
     }
