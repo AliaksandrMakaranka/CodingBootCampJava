@@ -36,7 +36,8 @@ public record Box(int width, int height, String wall, String corner, String mess
  
     @Override
     public String toString() {
-      return String.format("Box[width=%d, height=%d, wall=%s, corner=%s, message=%s]");
+      return String.format("Box[width=%d, height=%d, wall=%s, corner=%s, message=%s]",
+          width, height, wall, corner, message);
     }
 
   }

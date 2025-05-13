@@ -53,7 +53,28 @@ public class StdString2 extends StdString1 {
   }
   
   public StdString2 concat(StdString2... that) {
-    return new StdString2();
+    if (that == null) {
+      throw new NullPointerException();
+    }
+    
+    int totalLength = super.length();
+    for (StdString2 str : that) {
+      if (str == null) {
+        throw new NullPointerException();
+      }
+      totalLength += str.length();
+    }
+    
+    char[] result = new char[totalLength];
+    System.arraycopy(super.base, 0, result, 0, super.length());
+    
+    int currentPos = super.length();
+    for (StdString2 str : that) {
+      System.arraycopy(str.base, 0, result, currentPos, str.length());
+      currentPos += str.length();
+    }
+    
+    return new StdString2(result);
   }
 
   /* public StdString2[] split(char separator) {

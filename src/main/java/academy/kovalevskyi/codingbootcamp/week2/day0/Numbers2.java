@@ -23,10 +23,22 @@ public class Numbers2 extends Numbers1 {
   }*/
   
   public static char[][] generateTuple() {
-    return new char[0][0];
+    char[][] result = new char[1][2];
+    result[0][0] = '0';
+    result[0][1] = '1';
+    return result;
   }
 
   public static char[][] generateTuples(int amount) {
-    return new char[1][1];
+    if (amount <= 0) {
+      throw new IllegalArgumentException("Amount must be positive");
+    }
+    
+    char[][] result = new char[amount][2];
+    for (int i = 0; i < amount; i++) {
+      result[i][0] = (char)('0' + i);
+      result[i][1] = (char)('0' + (i + 1));
+    }
+    return result;
   }
 }
